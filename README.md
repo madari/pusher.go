@@ -11,6 +11,16 @@ to provide understandable publisher/subscriber mechanism above uniquely
 identifiable channels following the footsteps of its' inspirational source,
 the [NGiNX HTTP push module](http://pushmodule.slact.net/).
 
+## Documentation
+
+Full documentation is at [http://gopkgdoc.appspot.com/pkg/github.com/madari/pusher.go](http://gopkgdoc.appspot.com/pkg/github.com/madari/pusher.go).
+As for the the protocol, see [http://pushmodule.slact.net/protocol.html)(http://pushmodule.slact.net/protocol.html).
+
+## Client
+
+A reference client written in JavaScript is available under the [example](example/www/pusher.js).
+It should be fairly straightforward to port it into your favourite environment.
+
 ## License 
 
 (The MIT License)
