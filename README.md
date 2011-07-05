@@ -11,11 +11,11 @@ the [NGiNX HTTP push module](http://pushmodule.slact.net/).
 
 ## Documentation
 
-[Full documentation](http://gopkgdoc.appspot.com/pkg/github.com/madari/pusher.go)
+See [documentation](http://gopkgdoc.appspot.com/pkg/github.com/madari/pusher.go) and [protocol specification](http://pushmodule.slact.net/protocol.html).
 
 ## Client
 
-A reference client written in JavaScript is available under the [example](example/www/pusher.js).
+A reference client written in JavaScript is available under the [example](http://github.com/madari/pusher.go/blob/master/example/www/pusher.js).
 It should be fairly straightforward to port it into your favourite environment.
 
 ## License 
