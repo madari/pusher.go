@@ -13,8 +13,7 @@ the [NGiNX HTTP push module](http://pushmodule.slact.net/).
 
 ## Documentation
 
-Full documentation is at [http://gopkgdoc.appspot.com/pkg/github.com/madari/pusher.go](http://gopkgdoc.appspot.com/pkg/github.com/madari/pusher.go).
-As for the the protocol, see [http://pushmodule.slact.net/protocol.html)(http://pushmodule.slact.net/protocol.html).
+[Full documentation](http://gopkgdoc.appspot.com/pkg/github.com/madari/pusher.go).
 
 ## Client
 
