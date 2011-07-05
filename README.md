@@ -1,19 +1,17 @@
-Pusher.go - HTTP Push package for Google Go
-==========================================
+Pusher.go - HTTP Server Push module for Google Go
+==================================================
 
-Pusher.go gives existing and new [Google Go](http://golang.org/) applications
-real and simple
-[HTTP Server Push](http://en.wikipedia.org/wiki/Push_technology#HTTP_server_push)
-capabilities without requiring any major efforts. Pusher.go relies and conforms
-to the
-[Basic HTTP Push Relay Protocol](http://pushmodule.slact.net/protocol.html)
+Pusher.go provides [Google Go](http://golang.org/) applications full [HTTP Server Push](http://en.wikipedia.org/wiki/Push_technology#HTTP_server_push)
+capabilities.
+Pusher.go relies and conforms
+to the [Basic HTTP Push Relay Protocol](http://pushmodule.slact.net/protocol.html)
 to provide understandable publisher/subscriber mechanism above uniquely
-identifiable channels following the footsteps of its' inspirational source,
+identifiable channels essentially following the footsteps of its' inspirational source,
 the [NGiNX HTTP push module](http://pushmodule.slact.net/).
 
 ## Documentation
 
-[Full documentation](http://gopkgdoc.appspot.com/pkg/github.com/madari/pusher.go).
+[Full documentation](http://gopkgdoc.appspot.com/pkg/github.com/madari/pusher.go)
 
 ## Client
 
