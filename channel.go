@@ -2,7 +2,6 @@ package pusher
 
 import (
 	"container/list"
-	"container/vector"
 	"fmt"
 	"http"
 	"os"
@@ -47,7 +46,7 @@ type channel struct {
 	lastMessage *Message       // The most recent message that delivered.
 	stats       Stats          // The statistics of the channel
 	id          string         // The name of the channel.
-	queue       vector.Vector  // The messages, newest first.
+	queue       []*Message     // The messages, oldest first.
 }
 
 // NewChannel creates a new channel.
@@ -57,6 +56,7 @@ func newChannel(id string, config *Configuration) (c *channel) {
 		config:      config,
 		stats:       Stats{Created: time.Seconds()},
 		id:          id,
+		queue:       make([]*Message, 0),
 	}
 	return
 }
@@ -166,12 +166,12 @@ func (c *channel) publish(m *Message, queue bool) (n int) {
 	c.stats.Delivered += int64(n)
 
 	if queue && c.config.ChannelCapacity > 0 {
-		if c.queue.Len() >= c.config.ChannelCapacity {
-			c.queue.Pop()
+		if len(c.queue) >= c.config.ChannelCapacity {
+			c.queue = c.queue[1:]
 		} else {
 			c.stats.Queued++
 		}
-		c.queue.Insert(0, m)
+		c.queue = append(c.queue, m)
 	}
 
 	return
@@ -208,8 +208,7 @@ func (c *channel) Subscribe(since int64, etag int) (*list.Element, *Message) {
 		}
 	}
 
-	for i := c.queue.Len() - 1; i >= 0; i-- {
-		m := c.queue.At(i).(*Message)
+	for _, m := range c.queue {
 		if m.time >= since {
 			if m.time == since && m.etag <= etag {
 				continue
