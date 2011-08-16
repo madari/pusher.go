@@ -78,7 +78,7 @@ func (c *channel) writeStats(rw http.ResponseWriter, req *http.Request) os.Error
 
 	// Valid Accept-types are {text | application} / {statFormats...}.
 	// If these conditions are not met, we will revert to text/plain.
-	accept := strings.Split(strings.ToLower(req.Header.Get("Accept")), "/", 2)
+	accept := strings.SplitN(strings.ToLower(req.Header.Get("Accept")), "/", 2)
 	if len(accept) != 2 || (accept[0] != "text" && accept[0] != "application") {
 		typ, subtype = "text", "plain"
 	} else {

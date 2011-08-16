@@ -22,7 +22,7 @@ func main() {
 	push := pusher.New(pusher.StaticAcceptor("static"), config)
 	http.Handle("/pub", push.PublisherHandler)
 	http.Handle("/sub", push.SubscriberHandler)
-	http.Handle("/", http.FileServer("www/", "/"))
+	http.Handle("/", http.FileServer(http.Dir("www/")))
 
 	// Create the "static"-channel explictly, since AllowChannelCreation is false
 	// in the DefaultConfiguration.
