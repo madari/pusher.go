@@ -11,7 +11,7 @@ the [NGiNX HTTP push module](http://pushmodule.slact.net/).
 
 ## Documentation
 
-See [documentation](http://gopkgdoc.appspot.com/pkg/github.com/madari/pusher.go) and [protocol specification](http://pushmodule.slact.net/protocol.html).
+See [documentation](http://godoc.org/github.com/madari/pusher.go) and [protocol specification](http://pushmodule.slact.net/protocol.html).
 
 ## Client
 
